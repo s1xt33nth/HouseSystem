@@ -14,20 +14,22 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript">
-function toUrl(url) {
-	window.location.href = url;
-	return;
-}
-function doSearch() {
-	var f = document.getElementById('sform');
-	f.submit();
-}
+	function toUrl(url) {
+		window.location.href = url;
+		return;
+	}
+	function doSearch() {
+		var f = document.getElementById('sform');
+		f.submit();
+	}
 </script>
 </head>
 <body>
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);"
+				onclick="toUrl('house?method=gotoHomePage')"><img
+				src="images/logo.gif" /></a>
 		</div>
 		<div class="search">
 			<c:if test="${ sessionScope.loginUser.username == null}">
@@ -39,7 +41,7 @@ function doSearch() {
 					disabled="disabled" name="search"
 					value="${sessionScope.loginUser.username}" /></label>
 				<label class="ui-green"><input type="button" name="search"
-					value="首       页" onclick="toUrl('')" /></label>
+					value="首       页" onclick="toUrl('house?method=gotoHomePage')" /></label>
 				<label class="ui-green"><input type="button" name="search"
 					value="管理房屋信息" onclick="toUrl('house?method=gotoHouseManage')" /></label>
 				<label class="ui-green"><input type="button" name="search"
@@ -49,17 +51,18 @@ function doSearch() {
 			</c:if>
 		</div>
 	</div>
-	
+
 	<div id="navbar" class="wrap">
 		<dl class="search clearfix">
 			<form method="post" action="house?method=searchHouse" id='sform'>
 				<dt>
 					<ul>
 						<li class="bold">房屋信息</li>
-						<li>包含关键字：
-						    <input type="text" class="text" value='' name="keyword" autocomplete="off"/>
-							<label class="ui-blue"> 
-							<input type="button" onclick='doSearch()' name="search" value="搜索房屋" /></label>
+						<li>包含关键字： <input type="text" class="text" value=''
+							name="keyword" autocomplete="off" /> <label class="ui-blue">
+								<input type="button" onclick='doSearch()' name="search"
+								value="搜索房屋" />
+						</label>
 						</li>
 					</ul>
 				</dt>
@@ -145,7 +148,7 @@ function doSearch() {
 						面 积：<span>${ house.houseFloorage }m<sup>2</sup></span>
 					</p>
 					<p>
-						位 置：<span>${ house.district }  ${ house.street }</span>
+						位 置：<span>${ house.district } ${ house.street }</span>
 					</p>
 					<p>
 						联系方式：<span>${ house.contact }</span>
@@ -158,7 +161,7 @@ function doSearch() {
 				</p>
 				<p>资质证书：有</p>
 				<p>内部编号： 00${ houseUserInfo.userId }${ house.houseId }</p>
-				<p>联 系 人：${  houseUserInfo.realname } </p>
+				<p>联 系 人：${  houseUserInfo.realname }</p>
 				<p>
 					联系电话：<span>${  houseUserInfo.telephone }</span>
 				</p>
@@ -171,13 +174,15 @@ function doSearch() {
 				<h2>
 					<span><strong>房源照片</strong></span>
 				</h2>
-				<div class="content" style="text-align: center; display: table-cell; vertical-align: middle; ">
-					 <c:if test="${empty house.filePath }">
-							<img src="images/thumb_house.gif" />
-					 </c:if>
-					 <c:if test="${not empty house.filePath }">
-							<img src="upload/${house.filePath}" style="max-width: 100%; max-height: 100%;"/>
-					 </c:if>
+				<div class="content"
+					style="text-align: center; display: table-cell; vertical-align: middle;">
+					<c:if test="${empty house.filePath }">
+						<img src="images/thumb_house.gif" />
+					</c:if>
+					<c:if test="${not empty house.filePath }">
+						<img src="upload/${house.filePath}"
+							style="max-width: 100%; max-height: 100%;" />
+					</c:if>
 				</div>
 			</div>
 			<div class="introduction">

@@ -34,7 +34,8 @@
 <body>
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<!--  <a href="/HouseSystem"><img src="images/logo.gif" /></a> -->
+			<a href="javascript:void(0);" onclick="toUrl('house?method=gotoHomePage')"><img src="images/logo.gif" /></a>
 		</div>
 		<div class="search">
 			<c:if test="${ sessionScope.loginUser.username == null}">
@@ -46,7 +47,7 @@
 					disabled="disabled" name="search"
 					value="${sessionScope.loginUser.username}" /></label>
 			    <label class="ui-green"><input type="button" name="search"
-					value="首       页" onclick="toUrl('')" /></label>
+					value="首       页" onclick="toUrl('house?method=gotoHomePage')" /></label>
 				<label class="ui-green"><input type="button" name="search"
 					value="管理房屋信息" onclick="toUrl('house?method=gotoHouseManage')" /></label>
 				<label class="ui-green"><input type="button" name="search"

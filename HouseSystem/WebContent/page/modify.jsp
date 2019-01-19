@@ -16,6 +16,11 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript">
+	function toUrl(url) {
+		window.location.href = url;
+		return;
+	}
+
 	function checkForm() {
 		var houseTitle = document.getElementsByName('houseTitle')[0].value;
 		var houseFloorage = document.getElementsByName('houseFloorage')[0].value;
@@ -115,13 +120,14 @@
 					districts[selectDistrict][j]));
 		}
 	}
-	
 </script>
 </head>
 <body onload="loadDistrict()">
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);"
+				onclick="toUrl('house?method=gotoHomePage')"><img
+				src="images/logo.gif" /></a>
 		</div>
 
 	</div>
@@ -133,12 +139,13 @@
 
 			</dl>
 			<div class="box">
-				<form action="house?method=houseModify" method="post" enctype="multipart/form-data" 
-					name="houseModifyForm" onsubmit="return checkForm()">
+				<form action="house?method=houseModify" method="post"
+					enctype="multipart/form-data" name="houseModifyForm"
+					onsubmit="return checkForm()">
 					<!-- 表单隐藏域 -->
-					<input type="hidden" name="userId" value="${ house.userId }" /> 
-					<input type="hidden" name="houseId" value="${ house.houseId }" /> 
-					<input type="hidden" name="formToken" value="${ sessionScope.token }" />
+					<input type="hidden" name="userId" value="${ house.userId }" /> <input
+						type="hidden" name="houseId" value="${ house.houseId }" /> <input
+						type="hidden" name="formToken" value="${ sessionScope.token }" />
 					<div class="infos">
 						<table class="field" style="align: center; width: 100%">
 							<tr>
@@ -201,21 +208,19 @@
 							</tr>
 							<tr>
 								<td class="field">上传照片：</td>
-								<td><input type="file" class="text" name="file" />
-								<!-- 表单隐藏域 -->
-					            <input type="hidden" name="filePath" value="${ house.filePath }" /> 
-					            </td>
+								<td><input type="file" class="text" name="file" /> <!-- 表单隐藏域 -->
+									<input type="hidden" name="filePath"
+									value="${ house.filePath }" /></td>
 							</tr>
 							<tr>
 								<td class="field">照片预览 ：</td>
-								<td>
-								<img src="upload/${house.filePath}" style="max-width: 60%; max-height: 40%;"/>
-					            </td>
+								<td><img src="upload/${house.filePath}"
+									style="max-width: 60%; max-height: 40%;" /></td>
 							</tr>
 						</table>
 						<div class="buttons">
 							<input type="submit" value="立即修改" /> <input type="button"
-								value="返       回" onclick="javascript:window.history.go(-1);" /> 
+								value="返       回" onclick="javascript:window.history.go(-1);" />
 						</div>
 					</div>
 				</form>

@@ -12,13 +12,17 @@
 <title>易租房 - 用户注册</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
-<style type="text/css">    
-     body{    
-        background: url(images/bg.jpg);    
-        background-size:cover;  
-     }    
-</style> 
+<style type="text/css">
+body {
+	background: url(images/bg.jpg);
+	background-size: cover;
+}
+</style>
 <script type="text/javascript">
+	function toUrl(url) {
+		window.location.href = url;
+		return;
+	}
 	function ckun() {
 		var username = document.getElementById("username").value;
 		if (username == "") {
@@ -90,7 +94,9 @@
 <body>
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href=""><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);"
+				onclick="toUrl('house?method=gotoHomePage')"><img
+				src="images/logo.gif" /></a>
 		</div>
 	</div>
 	<div id="regLogin" class="wrap">
@@ -143,8 +149,9 @@
 							</tr>
 						</table>
 						<div class="buttons">
-							<input type="submit" value="立即注册" />
-							<input type="button" value="返回登录" onclick='document.location="/HouseSystem/page/login.jsp"'/>
+							<input type="submit" value="立即注册" /> <input type="button"
+								value="返回登录"
+								onclick='document.location="/HouseSystem/page/login.jsp"' />
 						</div>
 					</div>
 				</form>

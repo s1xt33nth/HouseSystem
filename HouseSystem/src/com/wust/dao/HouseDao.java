@@ -39,7 +39,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return false;
 		} finally {
-			DBUtil.closeAll(null, null, pstmt);
+			DBUtil.closeAll(null, null, pstmt, conn);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return houseList;
 	}
@@ -113,7 +113,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return houseList;
 	}
@@ -153,7 +153,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return houseList;
 	}
@@ -185,7 +185,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return false;
 		} finally {
-			DBUtil.closeAll(rs, stmt, pstmt);
+			DBUtil.closeAll(rs, stmt, pstmt, conn);
 		}
 	}
 
@@ -204,7 +204,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return false;
 		} finally {
-			DBUtil.closeAll(rs, stmt, pstmt);
+			DBUtil.closeAll(rs, stmt, pstmt, conn);
 		}
 	}
 
@@ -235,7 +235,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return house;
 	}
@@ -252,7 +252,7 @@ public class HouseDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return 0;
 	}
@@ -269,7 +269,7 @@ public class HouseDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return 0;
 	}
@@ -293,7 +293,7 @@ public class HouseDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return userInfo;
 	}
@@ -405,7 +405,7 @@ public class HouseDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return 0;
 	}
@@ -541,7 +541,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return houseList;
 	}
@@ -653,7 +653,7 @@ public class HouseDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return 0;
 	}
@@ -788,7 +788,7 @@ public class HouseDao extends BaseDao {
 			e.printStackTrace();
 			return null;
 		} finally {
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return houseList;
 	}

@@ -30,7 +30,7 @@ public class DicDao extends BaseDao{
 			e.printStackTrace();
 			return null;
 		} finally{
-			DBUtil.closeAll(rs, null, pstmt);
+			DBUtil.closeAll(rs, null, pstmt, conn);
 		}
 		return dicList;
 	}

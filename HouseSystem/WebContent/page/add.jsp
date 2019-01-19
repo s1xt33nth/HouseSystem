@@ -15,6 +15,11 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
 <script type="text/javascript">
+    function toUrl(url) {
+	    window.location.href = url;
+	    return;
+    }
+
 	function checkForm() {
 		var houseTitle = document.getElementsByName('houseTitle')[0].value;
 		var houseFloorage = document.getElementsByName('houseFloorage')[0].value;
@@ -89,7 +94,7 @@
 <body onload="loadDistrict()">
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);" onclick="toUrl('house?method=gotoHomePage')"><img src="images/logo.gif" /></a>
 		</div>
 
 	</div>

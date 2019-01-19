@@ -20,7 +20,7 @@ public class UserDao extends BaseDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return password;
 	}
@@ -44,7 +44,7 @@ public class UserDao extends BaseDao{
 			e.printStackTrace();
 			return false;
 		} finally {
-			DBUtil.closeAll(null, null, pstmt);
+			DBUtil.closeAll(null, null, pstmt, conn);
 		}
 	}
 
@@ -66,7 +66,7 @@ public class UserDao extends BaseDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeAll(rs, stmt, null);
+			DBUtil.closeAll(rs, stmt, null, conn);
 		}
 		return userInfo;
 	}

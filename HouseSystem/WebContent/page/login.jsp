@@ -13,36 +13,42 @@
 <title>易租房 - 用户登录</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
-<style type="text/css">    
-     body{    
-        background: url(images/bg.jpg);    
-        background-size:cover;  
-     }    
-</style> 
-<script type="text/javascript">
-function checkForm() {
-	var username = document.getElementsByName('username')[0].value;
-	var password = document.getElementsByName('password')[0].value;
-	var veryCode = document.getElementById('veryCode').value;
-	if (username == "") {
-		document.getElementById("ckMsg").innerHTML = "请输入用户名！";
-		return false;
-	} else if (password == "") {
-		document.getElementById("ckMsg").innerHTML = "请输入密码！";
-		return false;
-	} else if (veryCode == "") {
-		document.getElementById("ckMsg").innerHTML = "请输入验证码！";
-		return false;
-	} else {
-		return true;
-	}
+<style type="text/css">
+body {
+	background: url(images/bg.jpg);
+	background-size: cover;
 }
+</style>
+<script type="text/javascript">
+	function toUrl(url) {
+		window.location.href = url;
+		return;
+	}
+	function checkForm() {
+		var username = document.getElementsByName('username')[0].value;
+		var password = document.getElementsByName('password')[0].value;
+		var veryCode = document.getElementById('veryCode').value;
+		if (username == "") {
+			document.getElementById("ckMsg").innerHTML = "请输入用户名！";
+			return false;
+		} else if (password == "") {
+			document.getElementById("ckMsg").innerHTML = "请输入密码！";
+			return false;
+		} else if (veryCode == "") {
+			document.getElementById("ckMsg").innerHTML = "请输入验证码！";
+			return false;
+		} else {
+			return true;
+		}
+	}
 </script>
 </head>
 <body>
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);"
+				onclick="toUrl('house?method=gotoHomePage')"><img
+				src="images/logo.gif" /></a>
 		</div>
 	</div>
 	<div id="regLogin" class="wrap">
@@ -54,7 +60,8 @@ function checkForm() {
 					<div class="infos">
 						<table class="field" style="align: center; width: 100%">
 							<tr>
-								<td colspan="2" style="color: red; text-align: center;"><p id="ckMsg"> ${msg} </p></td>
+								<td colspan="2" style="color: red; text-align: center;"><p
+										id="ckMsg">${msg}</p></td>
 							</tr>
 							<tr>
 								<td class="field">用 户 名：</td>
@@ -67,10 +74,10 @@ function checkForm() {
 							<tr>
 								<td class="field">验 证 码：</td>
 								<td><input type="text" class="text verycode"
-									name="veryCode" id="veryCode"  autocomplete="off"/><img id="codeImg"
-									src="page/code.jsp"
+									name="veryCode" id="veryCode" autocomplete="off" /><img
+									id="codeImg" src="page/code.jsp"
 									onclick="this.src='page/code.jsp?id='+ Math.random();"
-									title="单击图片刷新" 
+									title="单击图片刷新"
 									style="vertical-align: middle; position: relative; left: 10%" /></td>
 							</tr>
 						</table>

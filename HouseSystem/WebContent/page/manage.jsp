@@ -39,7 +39,9 @@
 <body>
 	<div id="header" class="wrap">
 		<div id="logo">
-			<a href="/HouseSystem"><img src="images/logo.gif" /></a>
+			<a href="javascript:void(0);"
+				onclick="toUrl('house?method=gotoHomePage')"><img
+				src="images/logo.gif" /></a>
 		</div>
 
 		<div class="search">
@@ -48,11 +50,13 @@
 					value="登       录" onclick="toUrl('/HouseSystem/page/login.jsp')" /></label>
 			</c:if>
 			<c:if test="${ sessionScope.loginUser.username != null}">
-				<label class="ui-red"><input type="button" disabled="disabled" name="search" value="${sessionScope.loginUser.username}" /></label> 
+				<label class="ui-red"><input type="button"
+					disabled="disabled" name="search"
+					value="${sessionScope.loginUser.username}" /></label>
 				<label class="ui-green"><input type="button" name="search"
-					value="首       页" onclick="toUrl('')" /></label>
+					value="首       页" onclick="toUrl('house?method=gotoHomePage')" /></label>
 				<label class="ui-green"><input type="button" name="search"
-				value="管理房屋信息" onclick="toUrl('house?method=gotoHouseManage')" /></label> 
+					value="管理房屋信息" onclick="toUrl('house?method=gotoHouseManage')" /></label>
 				<label class="ui-green"><input type="button" name="search"
 					value="发布房屋信息" onclick="toUrl('house?method=gotoHouseAdd')" /></label>
 				<label class="ui-green"><input type="button" name="search"
@@ -75,21 +79,21 @@
 						<c:set var="className" value="" />
 					</c:if>
 					<tr class="${ className }">
-						<td class="house-thumb">
-						<span>
-						<a href="javascript:gotoShow(${house.houseId})">
-						<c:if test="${empty house.filePath }">
-							<img src="images/thumb_house.gif" />
-					    </c:if>
-					     <c:if test="${not empty house.filePath }">
-							<img src="<%=basePath %>/upload/${house.filePath}" height="90" width="120"/>
-					    </c:if>
-						</a>
+						<td class="house-thumb"><span> <a
+								href="javascript:gotoShow(${house.houseId})"> <c:if
+										test="${empty house.filePath }">
+										<img src="images/thumb_house.gif" />
+									</c:if> <c:if test="${not empty house.filePath }">
+										<img src="<%=basePath %>/upload/${house.filePath}" height="90"
+											width="120" />
+									</c:if>
+							</a>
 						</span></td>
 						<td>
 							<dl>
 								<dt>
-									<a href="javascript:gotoShow(${house.houseId})"> ${house.houseTitle} </a>
+									<a href="javascript:gotoShow(${house.houseId})">
+										${house.houseTitle} </a>
 								</dt>
 								<dd>
 									${house.district} ${house.street} ${house.houseFloorage}平米 <br />
