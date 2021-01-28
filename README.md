@@ -1,4 +1,4 @@
-# HouseSystem
+# HouseSystem（易房网）
 一个使用 servlet 实现的网站。
 
 ### 功能点
